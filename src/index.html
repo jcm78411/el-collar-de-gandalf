@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Collar de Perlas</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="../css/bulma.min.css">
+  <script src="../js/sweetalert.js"></script>
+</head>
+<body class="has-background-light">
+  <section class="section">
+    <div id="titleYbuttons">
+      <h1 class="title has-text-centered">El Collar Mágico De Gandalf</h1>
+
+      <div class="field is-grouped is-justify-content-center">
+        <div class="control">
+          <input class="input" type="number" id="numPerlas" min="1" step="1" placeholder="Número de perlas">
+        </div>
+        <div class="control">
+          <button class="button is-primary" id="startBtn">Iniciar</button>
+          <button class="button is-primary" id="stopBtn" disabled>Detener</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+      <div class="columns is-variable is-8">
+        <!-- Collar circular -->
+        <div class="column is-half">
+          <div class="box is-flex is-justify-content-center">
+            <div id="collar-circular"></div>
+          </div>
+        </div>
+
+        <!-- Tabla scrollable -->
+        <div class="column is-half">
+          <div class="box" id="tabla-container">
+            <div class="tabla-scroll">
+              <table class="table is-striped is-hoverable is-fullwidth" id="tabla">
+                <thead>
+                  <tr id="encabezado"></tr>
+                </thead>
+                <tbody id="registro"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

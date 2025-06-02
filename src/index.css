@@ -1,0 +1,241 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: clamp(12px, 2vw, 24px);
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+}
+html {
+  box-sizing: border-box;
+}
+.box.is-flex.is-justify-content-center {
+    height: 100%;
+}
+
+.box {
+    height: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+#collar-circular {
+  position: relative;
+  width: clamp(250px, 30vw, 400px);
+  height: clamp(250px, 30vw, 400px);
+  border-radius: 50%;
+
+  margin: 30px auto;
+  /* background: radial-gradient(circle at center, #f9f9f9, #e0e0e0); */
+  /* border: 4px solid #aaa; */
+  /* box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2), 0 0px 10px rgba(0, 0, 0, 0.2); */
+  
+}
+
+.perla {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+  box-shadow: inset -1px -1px 4px rgba(0, 0, 0, 0.3),
+              inset 1px 1px 4px rgba(255, 255, 255, 0.4),
+              0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in-out;
+  cursor: default;
+}
+
+/* .perla {
+  position: absolute;
+  
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  line-height: 30px;
+
+  width: clamp(20px, 12%, 40px);
+  height: clamp(20px, 12%, 40px);
+  font-size: clamp(8px, 1.5vw, 14px);
+  line-height: clamp(20px, 12%, 40px);
+  border-radius: 50%;
+  border: 1px solid #000;
+  transform-origin: center center;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.3s ease;
+} */
+
+
+.blanca {
+  background-color: white;
+}
+
+.negra {
+  background-color: black;
+}
+
+#titleYbuttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+  top: 0;
+  padding-top: 0px;
+  position: sticky;
+}
+
+#tabla-container {
+  width: 100% !important;
+  max-width: 800px;
+  /* margin: 20px auto; */
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.tabla-scroll {
+  /* max-height: 300px; */
+  height: 50vh;
+  /* min-width: 80vh; */
+  /* width: 800px; */
+  overflow-y: auto;
+  /* overflow-x: auto; */
+}
+
+.tabla-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tabla-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+#collar-circular {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 10%;
+  transition: transform 0.8s ease-in-out;
+  margin: auto;
+}
+
+
+.perla.salto {
+  animation: salto 0.4s ease;
+}
+
+@keyframes salto {
+  0%   { transform: translate(-50%, -50%) scale(1); }
+  50%  { transform: translate(-50%, -60%) scale(1.2); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.perla.blanca {
+  background-color: white;
+  background: radial-gradient(circle at 30% 30%, #fff, #ddd);
+  color: black;
+  border: 2px solid #ccc;
+}
+
+.perla.negra {
+  background-color: #000000;
+  background: radial-gradient(circle at 30% 30%, #333, #000);
+  color: white;
+}
+
+.perla.ultima-transformada {
+  animation: brillar 3s ease-out 1;
+  box-shadow: 0 0 12px 6px rgba(255, 255, 255, 0.6);
+  z-index: 1;
+}
+
+@keyframes brillar {
+  0% {
+    background-color: #ff0040;
+    box-shadow: 0 0 0px 0px #39ff14;
+  }
+  50% {
+    background-color: #ffff00;
+    box-shadow: 0 0 30px 15px #00fff7;
+  }
+  100% {
+    background-color: #00ff6a;
+    box-shadow: 0 0 0px 0px #bfff00;
+  }
+}
+
+
+td.perla-blanca {
+  background-color: #ffffff;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  animation: saltoT 0.4s ease;
+}
+
+td.perla-negra {
+  background-color: #61616131;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  animation: saltoT 0.4s ease;
+}
+
+@keyframes saltoT {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+    flex-direction: column;
+  }
+
+  #collar-circular {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .perla {
+    width: 10vw;
+    height: 10vw;
+    font-size: 3vw;
+    line-height: 10vw;
+  }
+}
+ 
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+    flex-direction: column;
+  }
+
+  #collar-circular {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .perla {
+    width: 10vw;
+    height: 10vw;
+    font-size: 3vw;
+    line-height: 10vw;
+  }
+}
