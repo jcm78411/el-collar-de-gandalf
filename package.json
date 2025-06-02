@@ -9,7 +9,8 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "echo \"No linting configured\"",
+    "mp_packager": "electron-packager . collar-perlas --platform=win32 --arch=x64 --overwrite"
   },
   "keywords": [],
   "author": {
@@ -30,6 +31,7 @@
     "@electron-forge/plugin-fuses": "^7.8.1",
     "@electron/fuses": "^1.8.0",
     "electron": "36.3.1",
+    "electron-packager": "^17.1.2",
     "electron-reloader": "^1.2.3"
   }
 }
