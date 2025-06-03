@@ -88,8 +88,11 @@ function ciclo() {
   }, 800);
 }
 
+// function rotar(arr) {
+//   return [arr[arr.length - 1], ...arr.slice(0, arr.length - 1)];
+// }
 function rotar(arr) {
-  return [arr[arr.length - 1], ...arr.slice(0, arr.length - 1)];
+  return [...arr.slice(1), arr[0]];
 }
 
 function mostrarCollar() {
@@ -97,14 +100,24 @@ function mostrarCollar() {
   contenedor.innerHTML = "";
 
   const n = perlas.length;
-  const radius = 150;
-  const centerX = 125;
-  const centerY = 125;
+  const perlaSize = 20; // Diámetro de cada perla
+  const padding = 5; // Espacio opcional entre perlas
+  const angle = (2 * Math.PI) / n;
+  const minRadius = 20;
+
+  const radius = Math.max(minRadius, (perlaSize + padding) / (2 * Math.sin(angle / 2)));
+  const centerX = radius + 50;
+  const centerY = radius + 50;
+
+  // Ajustar el tamaño del contenedor según el nuevo radio
+  contenedor.style.width = `${centerX * 2}px`;
+  contenedor.style.height = `${centerY * 2}px`;
+  contenedor.style.position = "relative";
 
   perlas.forEach((color, i) => {
-    const angle = (2 * Math.PI * i) / n;
-    const x = centerX + radius * Math.cos(angle) - 15;
-    const y = centerY + radius * Math.sin(angle) - 15;
+    const theta = (2 * Math.PI * i) / n;
+    const x = centerX + radius * Math.cos(theta) - perlaSize / 2;
+    const y = centerY + radius * Math.sin(theta) - perlaSize / 2;
 
     const div = document.createElement("div");
     div.className = `perla ${color}`;
@@ -119,10 +132,12 @@ function mostrarCollar() {
     div.classList.add("salto");
 
     contenedor.appendChild(div);
+
     if (i === ultimaTransformada) {
       div.classList.add("ultima-transformada");
     }
   });
+
   ultimaTransformada = -1;
 }
 

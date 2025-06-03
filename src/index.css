@@ -26,6 +26,7 @@ html {
 body::-webkit-scrollbar {
   display: none;
 }
+
 #collar-circular {
   position: relative;
   width: clamp(250px, 30vw, 400px);
@@ -108,8 +109,8 @@ body::-webkit-scrollbar {
 }
 
 .tabla-scroll {
-  /* max-height: 300px; */
-  height: 50vh;
+  max-height: 70vh;
+  height: auto;
   /* min-width: 80vh; */
   /* width: 800px; */
   overflow-y: auto;
