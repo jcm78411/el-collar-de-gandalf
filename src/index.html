@@ -1,54 +1,116 @@
 <!DOCTYPE html>
+<!-- Indica que este es un documento HTML5 -->
 <html lang="es">
+<!-- El idioma del documento está configurado en español -->
+
 <head>
   <meta charset="UTF-8">
+  <!-- Define la codificación de caracteres como UTF-8 -->
+
   <title>Collar de Perlas</title>
+  <!-- Título que aparece en la pestaña del navegador -->
+
   <link rel="stylesheet" href="index.css">
+  <!-- Vincula una hoja de estilo personalizada llamada index.css -->
+
   <link rel="stylesheet" href="../css/bulma.min.css">
+  <!-- Vincula la hoja de estilo del framework Bulma (CSS para diseño responsivo) -->
+
   <script src="../js/sweetalert.js"></script>
+  <!-- Importa la biblioteca SweetAlert para mostrar alertas bonitas -->
 </head>
+
 <body class="has-background-light">
+  <!-- Aplica un fondo claro al cuerpo de la página usando clases de Bulma -->
+
   <section class="section">
+    <!-- Sección principal del contenido -->
+
     <div id="titleYbuttons">
+      <!-- Contenedor para el título y los botones -->
+
       <h1 class="title has-text-centered">El Collar Mágico De Gandalf</h1>
+      <!-- Título centrado con estilos de Bulma -->
 
       <div class="field is-grouped is-justify-content-center">
+        <!-- Grupo de campos alineados al centro (usando Bulma) -->
+
         <div class="control">
           <input class="input" type="number" id="numPerlas" min="1" step="1" placeholder="Número de perlas">
+          <!-- Campo de entrada numérico para especificar cuántas perlas tendrá el collar -->
         </div>
+
         <div class="control">
           <button class="button is-primary" id="startBtn">Iniciar</button>
+          <!-- Botón para iniciar la animación o lógica del collar -->
+
           <button class="button is-primary" id="stopBtn" disabled>Detener</button>
+          <!-- Botón para detener el proceso, deshabilitado por defecto -->
         </div>
       </div>
     </div>
+
     <div class="container">
+      <!-- Contenedor para la disposición del collar y la tabla -->
 
       <div class="columns is-variable is-8">
+        <!-- Sistema de columnas de Bulma con separación variable -->
+
         <!-- Collar circular -->
         <div class="column is-half">
+          <!-- Columna izquierda: mostrará el collar -->
+
           <div class="box is-flex is-justify-content-center">
+            <!-- Caja centrada con flexbox para alinear el contenido -->
+
             <div id="collar-circular"></div>
+            <!-- Div vacío donde se renderizará visualmente el collar -->
           </div>
         </div>
 
         <!-- Tabla scrollable -->
         <div class="column is-half">
+          <!-- Columna derecha: mostrará la tabla de datos -->
+
           <div class="box" id="tabla-container">
+            <!-- Caja que contiene la tabla -->
+
             <div class="tabla-scroll">
+              <!-- Div con scroll para manejar muchas filas en la tabla -->
+
               <table class="table is-striped is-hoverable is-fullwidth" id="tabla">
+                <!-- Tabla estilizada con Bulma (rayas, hover, ancho completo) -->
+
                 <thead>
                   <tr id="encabezado"></tr>
+                  <!-- Fila de encabezados de la tabla (se llenará dinámicamente) -->
                 </thead>
+
                 <tbody id="registro"></tbody>
+                <!-- Cuerpo de la tabla, donde se mostrarán los registros dinámicamente -->
               </table>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
   <script src="renderer.js"></script>
+  <!-- Script que contiene la lógica del collar y la tabla -->
 </body>
+
 </html>
+<!-- Fin del cuerpo del documento HTML -->
+<!-- Fin del documento HTML -->
+<!-- Este es un documento HTML que define una interfaz de usuario para un collar mágico de perlas -->
+<!-- que permite al usuario especificar el número de perlas y ver una animación o registro de su disposición. -->
+<!-- El diseño utiliza Bulma para el estilo y SweetAlert para alertas -->
+<!-- El collar se renderiza en un div y la tabla muestra los registros de las perlas -->
+<!-- de manera dinámica. -->
+<!-- El código está estructurado para ser responsivo y fácil de usar, con botones para iniciar y detener la animación. -->
+<!-- El uso de clases de Bulma facilita la creación de un diseño limpio y moderno. -->
+<!-- El documento está diseñado para ser claro y accesible, con comentarios que explican cada sección -->
+<!-- y elemento del código HTML. -->
+<!-- El uso de etiquetas semánticas y clases de Bulma mejora la legibilidad y el mantenimiento del código -->

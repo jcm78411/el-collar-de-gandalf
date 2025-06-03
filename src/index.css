@@ -1,22 +1,35 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  /* Ancho completo */
   width: 100vw;
+  /* Alto completo */
   min-height: 100vh;
+  /* Sin margen ni padding */
   margin: 0;
   padding: 0;
+  /* Fondo claro */
   background-color: #f0f0f0;
+  /* Contenido justificado en el centro */
   justify-content: center;
+  /* Centrar contenido horizontalmente */
   align-items: center;
+  /* Flexbox para centrar contenido */
   flex-direction: column;
+  /* Tamaño de fuente responsivo */
   font-size: clamp(12px, 2vw, 24px);
+  /* Estilo de la barra de desplazamiento */
   scrollbar-width: thin;
   -ms-overflow-style: none;
 }
+
 html {
+  /* Establecer el modelo de caja para todos los elementos */
   box-sizing: border-box;
 }
+
 .box.is-flex.is-justify-content-center {
-    height: 100%;
+  /* Alto completo */
+  height: 100%;
 }
 
 .box {
@@ -24,15 +37,20 @@ html {
 }
 
 body::-webkit-scrollbar {
+  /* Ocultar la barra de desplazamiento */
   display: none;
 }
 
 #collar-circular {
+  /* Estilo del collar circular */
+  /* Posicionamiento relativo */
   position: relative;
+  /* Tamaño responsivo */
   width: clamp(250px, 30vw, 400px);
   height: clamp(250px, 30vw, 400px);
+  /* Bordes redondeados (circulares) */
   border-radius: 50%;
-
+  /* Margen de 30 pixeles automatico */
   margin: 30px auto;
   /* background: radial-gradient(circle at center, #f9f9f9, #e0e0e0); */
   /* border: 4px solid #aaa; */
@@ -41,131 +59,149 @@ body::-webkit-scrollbar {
 }
 
 .perla {
+  /* Estilo de las perlas */
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  /* Borde blanco de 2px de grosor */
   border: 2px solid #ccc;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Fuente de tipo negrita */
   font-weight: bold;
+  /* Tamaño de fuente de 12 pixeles */
   font-size: 12px;
+  /* Estilo de sombra */
   box-shadow: inset -1px -1px 4px rgba(0, 0, 0, 0.3),
               inset 1px 1px 4px rgba(255, 255, 255, 0.4),
               0 2px 6px rgba(0, 0, 0, 0.2);
+  /* Transición suave */
   transition: all 0.5s ease-in-out;
   cursor: default;
 }
 
-/* .perla {
-  position: absolute;
-  
-  width: 30px;
-  height: 30px;
-  font-size: 15px;
-  line-height: 30px;
-
-  width: clamp(20px, 12%, 40px);
-  height: clamp(20px, 12%, 40px);
-  font-size: clamp(8px, 1.5vw, 14px);
-  line-height: clamp(20px, 12%, 40px);
-  border-radius: 50%;
-  border: 1px solid #000;
-  transform-origin: center center;
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  transition: transform 0.3s ease;
-} */
-
-
 .blanca {
+  /* Estilo de la perla blanca - Color de fondo */
   background-color: white;
 }
 
 .negra {
+  /* Estilo de la perla negra - Color de fondo */
   background-color: black;
 }
 
 #titleYbuttons {
+  /* Estilo del contenedor de título y botones */
+  /* Contenedor flexible para el título y los botones */
   display: flex;
+  /* Dirección de los elementos en columna */
   flex-direction: column;
+  /* Alinear elementos al centro */
   align-items: center;
   justify-content: center;
+  /* Espaciado interno */
   padding-bottom: 50px;
+  /* Posicionamiento */
   top: 0;
   padding-top: 0px;
+  /* Posicionamiento sticky o fijo */
   position: sticky;
 }
 
 #tabla-container {
+  /* Contenedor de la tabla */
+  /* Ancho completo con prioridad */
   width: 100% !important;
   max-width: 800px;
   /* margin: 20px auto; */
   padding: 10px;
   background-color: #fff;
   border-radius: 8px;
+  /* Sombra para dar profundidad */
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .tabla-scroll {
+  /* Estilo de la tabla con scroll */
+  /* Altura máxima de 70vh */
   max-height: 70vh;
+  /* Altura automática */
   height: auto;
   /* min-width: 80vh; */
   /* width: 800px; */
+  /* Overflow para permitir scroll */
   overflow-y: auto;
   /* overflow-x: auto; */
 }
 
 .tabla-scroll {
+  /* Estilo de la barra de desplazamiento */
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
 .tabla-scroll::-webkit-scrollbar {
+  /* Ocultar la barra de desplazamiento */
   display: none;
 }
 
 #collar-circular {
+  /* Estilo del collar circular */
   position: relative;
   width: 250px;
   height: 250px;
   border-radius: 10%;
+  /* Transición suave de tipo transform */
   transition: transform 0.8s ease-in-out;
+  /* Margen automático */
   margin: auto;
 }
 
-
 .perla.salto {
+  /* Estilo de la perla con salto */
   animation: salto 0.4s ease;
 }
 
 @keyframes salto {
+  /* Animación de salto */
+  /* En 0%, 50% y 100% aplica transform, translate y scale */
   0%   { transform: translate(-50%, -50%) scale(1); }
   50%  { transform: translate(-50%, -60%) scale(1.2); }
   100% { transform: translate(-50%, -50%) scale(1); }
 }
 
 .perla.blanca {
+  /* Estilo de la perla blanca */
+  /* Color de fondo blanco */
   background-color: white;
+  /* Fondo radial con degradado */
   background: radial-gradient(circle at 30% 30%, #fff, #ddd);
   color: black;
+  /* Color de borde y grosor */
   border: 2px solid #ccc;
 }
 
 .perla.negra {
+  /* Estilo de la perla negra */
   background-color: #000000;
   background: radial-gradient(circle at 30% 30%, #333, #000);
   color: white;
 }
 
 .perla.ultima-transformada {
+  /* Estilo de la última perla transformada */
+  /* Animación de brillo por tres segundos */
   animation: brillar 3s ease-out 1;
+  /* Sombra para dar efecto de brillo */
   box-shadow: 0 0 12px 6px rgba(255, 255, 255, 0.6);
+  /* Posicionamiento con z-index */
   z-index: 1;
 }
 
+/* Animación de brillo */
 @keyframes brillar {
+  /* Cambia el color de fondo y la sombra en diferentes puntos de la animación */
   0% {
     background-color: #ff0040;
     box-shadow: 0 0 0px 0px #39ff14;
@@ -180,7 +216,7 @@ body::-webkit-scrollbar {
   }
 }
 
-
+/* Estilo de las celdas de la tabla para las perlas blancas */
 td.perla-blanca {
   background-color: #ffffff;
   color: #000;
@@ -189,6 +225,7 @@ td.perla-blanca {
   animation: saltoT 0.4s ease;
 }
 
+/* Estilo de las celdas de la tabla para las perlas negras */
 td.perla-negra {
   background-color: #61616131;
   color: #fff;
@@ -197,12 +234,14 @@ td.perla-negra {
   animation: saltoT 0.4s ease;
 }
 
+/* Animación de salto para las perlas */
 @keyframes saltoT {
   0% { transform: scale(1); }
   50% { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
 
+/* Diseño responsivo para dispositivos móviles */
 @media (max-width: 600px) {
   body {
     font-size: 14px;
@@ -221,22 +260,4 @@ td.perla-negra {
     line-height: 10vw;
   }
 }
- 
-@media (max-width: 600px) {
-  body {
-    font-size: 14px;
-    flex-direction: column;
-  }
 
-  #collar-circular {
-    width: 80vw;
-    height: 80vw;
-  }
-
-  .perla {
-    width: 10vw;
-    height: 10vw;
-    font-size: 3vw;
-    line-height: 10vw;
-  }
-}
