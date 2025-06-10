@@ -182,7 +182,7 @@ function generarEncabezado(n) {
 // }
 
 function registrarIteracion() {
-  if (perlas.every((p) => p === "blanca")) return;
+  // if (perlas.every((p) => p === "blanca")) return;
 
   const row = document.createElement("tr");
   row.innerHTML = `<td>${iteraciones.length + 1}</td>`;
