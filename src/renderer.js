@@ -89,7 +89,7 @@ function ciclo() {
       confirmButtonText: "Aceptar",
     });
   }
-}, 800);
+}, 100);
 
 }
 
